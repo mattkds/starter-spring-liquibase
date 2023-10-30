@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-init-db
+      author: mattkds
+      changes:
+        - sqlFile:
+            splitStatements: true
+            path: classpath:/db/changelog/changes/001-initial-schema.sql
+            stripComments: true
+  - changeSet:
+      id: 002-add-player-columns
+      author: mattkds
+      changes:
+        - sqlFile:
+            splitStatements: true
+            path: classpath:/db/changelog/changes/002-add-player-field.sql
+            stripComments: true
+  - changeSet:
+      id: 003-create-stadium-table
+      author: mattkds
+      changes:
+        - createTable:
+            tableName: stadium
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: places
+                  type: int
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 0034-insert-stadium
+      author: mattkds
+      changes:
+        - insert:
+            catalogName: stadium
+            columns:
+              - column:
+                  name: name
+                  value: Suzann Lenglen
+              - column:
+                  name: places
+                  value: 10056
+            schemaName: public
+            tableName: stadium

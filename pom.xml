@@ -14,7 +14,7 @@
 	<name>starter-spring-liquibase</name>
 	<description>Define a simple starter for a spring web app using Liquibase for database migration</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

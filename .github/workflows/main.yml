@@ -13,4 +13,4 @@ jobs:
   build-java-application:
     uses: mattkds/starter-reusable-workflows/.github/workflows/starter-java-maven-build.yml@main
     with:
-      java-version: 17
+      java_version: 17

@@ -1,0 +1,16 @@
+name: Build application
+
+on:
+  push:
+    branches: none # [ main ]
+  pull_request:
+    branches: none # [ main ]
+  
+  # Allows you to run this workflow manually from the action tabs
+  workflow_dispatch:
+
+jobs:
+  build-java-application:
+    uses: mattkds/starter-reusable-workflows/.github/workflows/starter-java-maven-build.yml@main
+    with:
+      java-version: 17
